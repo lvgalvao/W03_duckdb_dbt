@@ -1,0 +1,14 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+    -   id: check-yaml
+-   repo: https://github.com/psf/black
+    rev: 22.10.0
+    hooks:
+    -   id: black
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.4.0  # Use a versão mais recente
+    hooks:
+    -   id: check-added-large-files
+        args: ['--maxkb=500']  # Define o tamanho máximo permitido  
