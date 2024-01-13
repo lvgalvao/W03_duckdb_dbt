@@ -17,7 +17,7 @@ Precisamos responder:
 
 ## Documentação
 
-Mkdocs: [Github-Pages](https://lvgalvao.github.io/Workshop03_duckdb_dbt/)
+Mkdocs: [Github-Pages](https://lvgalvao.github.io/W03_duckdb_dbt/)
 
 
 ## Pré-requisitos
