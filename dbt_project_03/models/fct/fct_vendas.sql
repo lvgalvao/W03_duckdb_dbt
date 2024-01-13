@@ -1,17 +1,22 @@
-{{ config(materialized='table') }}
-
-WITH src_transactions AS (
- SELECT
- *
- FROM
- {{ref('src_transactions')}}
-)
+{{
+ config(
+ materialized = 'incremental',
+ on_schema_change='fail'
+ )
+}}
 
 -- Agora, você pode definir sua consulta principal usando o Jinja
+
+WITH src_transactions AS (
+  SELECT * FROM {{ ref('src_transactions') }}
+)
+
 SELECT
  transaction_id,
  time_of_transaction,
  ean as ean_of_product,
+ store,
+ price,
  CASE
    WHEN price > 20 THEN TRUE
    ELSE FALSE
@@ -23,3 +28,6 @@ SELECT
  END AS periodo_do_dia
 FROM
  src_transactions
+{% if is_incremental() %}
+ WHERE time_of_transaction > (select max(time_of_transaction) from {{ this }})
+{% endif %}

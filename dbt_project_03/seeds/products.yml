@@ -1,0 +1,7 @@
+version: 2
+
+seeds:
+  - name: products
+    columns:
+      - name: ean
+        data_type: string

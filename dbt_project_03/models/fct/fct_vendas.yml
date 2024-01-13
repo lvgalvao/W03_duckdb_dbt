@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: fct_vendas
+    description: "Modelo de fatos das vendas."
+    columns:
+      - name: transaction_id
+        description: "ID da transação"
+        tests:
+          - unique
+          - not_null
+
+      - name: time_of_transaction
+        description: "Timestamp da transação"
+        tests:
+          - not_null
+
+      - name: ean_of_product
+        description: "Código EAN do produto"
+        tests:
+          - not_null
+
+      - name: store
+        description: "ID da loja"
+        tests:
+          - not_null
+
+      - name: price
+        description: "Preço do produto"
+        tests:
+          - not_null
+
+      - name: price_greater_than_20
+        description: "Indicador se o preço é maior que 20"
+        tests:
+          - accepted_values:
+              values: [true, false]
+
+      - name: periodo_do_dia
+        description: "Período do dia da transação"
+        tests:
+          - accepted_values:
+              values: ['Manhã', 'Meio Dia', 'Noite']
