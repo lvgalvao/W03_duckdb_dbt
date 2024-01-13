@@ -129,6 +129,7 @@ celerybeat.pid
 
 # Banco duckdb
 
+*.duckdb.*
 *.duckdb
 
 # Environments
