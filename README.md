@@ -42,8 +42,8 @@ Siga estas etapas para instalar e configurar o projeto em seu ambiente local:
 Clone o repositório para sua máquina local usando o seguinte comando:
 
 ```bash
-git clone https://github.com/lvgalvao/Workshop03_duckdb_dbt.git
-cd Workshop03_duckdb_dbt
+git clone git@github.com:lvgalvao/W03_duckdb_dbt.git
+cd W03_duckdb_dbt
 ```
 
 ### Configurando o Ambiente Python
