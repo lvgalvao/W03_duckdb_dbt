@@ -123,6 +123,9 @@ celerybeat.pid
 # SageMath parsed files
 *.sage.py
 
+# Arquivos
+*.parquet
+
 
 # Banco duckdb
 
