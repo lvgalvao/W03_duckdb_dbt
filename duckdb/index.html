@@ -75,13 +75,9 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#welcome-to-mkdocs" class="nav-link">Welcome to MkDocs</a>
+            <li class="nav-item" data-level="1"><a href="#duckdb" class="nav-link">duckdb</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#commands" class="nav-link">Commands</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#project-layout" class="nav-link">Project layout</a>
+            <li class="nav-item" data-level="2"><a href="#como-utiliza-lo-com-o-vscode" class="nav-link">Como utilizá-lo com o vscode?</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -92,21 +88,48 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
+<h1 id="duckdb">duckdb</h1>
+<p>Em nossa rotina temos que trabalhar muitas vezes consumindo; arquivos csv, parquet e outros formatos, e muitas vezes essa atividade não é tão simples, estão muitas vezes na AWS, Azure, etc. </p>
+<p>O duckdb hoje é a forma mais eficiente para se trabalhar com:</p>
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
+<li>Múltiplos arquivos</li>
+<li>Quem é muito bom em SQL (compatibilidade de código)</li>
+<li>Quem gosta de Python, R ou Java</li>
+<li>Quem usa Pandas ou Polars</li>
+<li>Quem precisa de performance</li>
+<li>Quem quer aproveitar hardware local</li>
+<li>Utilizar um In process OLAP DBMS, Columnar database e com processamento vetorial </li>
 </ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre></div>
+<p><img alt="Texto alternativo" src="../pic/pic01.png" /></p>
+<p><strong>É o SQLite do Analytics</strong></p>
+<p><a href="https://duckdb.org/docs/archive/0.9.1/installation/index?undefined=macos">Como instalar o duckdb?</a></p>
+<pre><code class="language-bash">poetry add duckdb
+</code></pre>
+<p><img alt="Texto alternativo" src="../pic/pic02.png" /></p>
+<h2 id="como-utiliza-lo-com-o-vscode">Como utilizá-lo com o vscode?</h2>
+<p>Acessar o <code>Open Keyboard Shortcuts (JSON)</code></p>
+<p><img alt="Texto alternativo" src="../pic/pic03.png" /></p>
+<p>Incluir esse atalha, dessa forma sempre que selecionarmos determinado texto e apertarmos <code>shift+enter</code> ele irá rodar esse código no terminal</p>
+<p><img alt="Texto alternativo" src="../pic/pic04.png" /></p>
+<p>Vamos brincar um pouco</p>
+<p><img alt="Texto alternativo" src="../pic/pic05.png" /></p>
+<ul>
+<li>Fazer o Exercício 01</li>
+</ul>
+<p>Vamos criar nossa primeira tabela /o/
+Por ele rodar in-processo, ao sairmos do programa perdemos os dados</p>
+<p>Exemplo: Persistindo os dados ao iniciar o CLI</p>
+<p><img alt="Texto alternativo" src="../pic/pic06.png" /></p>
+<p>Alguns pontos importantes sobre o formato duckdb</p>
+<ul>
+<li>
+<p>1 arquivo único (todas as tabelas ficam no mesmo arquivo)</p>
+</li>
+<li>
+<p>Suporta update</p>
+</li>
+<li>Armazenada no formato colunar</li>
+</ul></div>
             </div>
         </div>
 
