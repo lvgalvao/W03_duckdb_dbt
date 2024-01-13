@@ -1,0 +1,5 @@
+site_name: Workshop 03 - Duckdb + Dbtcore
+nav:
+    - Setup: index.md
+    - Duckdb: duckdb.md
+    - DbtCore: dbtcore.md
