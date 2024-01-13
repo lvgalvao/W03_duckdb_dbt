@@ -80,6 +80,8 @@ Mudar o nome disso tudo
 - Git rebase –continue
 
 ## Pre-commit
+
+
 - check-yaml
 - black (formatador) Nomes bonito-s
 - check-added-large-files
@@ -108,6 +110,80 @@ repos:
      - id: commitizen
        stages: [commit-msg]
 ```
+
+### Boas práticas de commit
+
+1) Commits atômicos: evite dar `git add .`
+
+A prática de criar commits atômicos consiste em criar um commit para cada modificação no projeto, por exemplo, vamos imaginar que estamos trabalhando em um projeto e fizemos duas ações:
+- criamos um novo componente
+- fizemos alterações em um já existente
+
+Em vez de criarmos um único commit para guardar as alterações que fizemos, faremos dois commits, seguindo um padrão de commits atômicos. O primeiro commit será com os arquivos envolvidos na criação do novo componente, e o segundo com as alterações feitas em um componente já existente.
+
+Dessa maneira conseguimos escrever uma mensagem mais descritiva para o commit, as ações na linha do tempo ficam mais descritivas e é mais prático navegar pelos commits visualizando as modificações. Na ocorrência de um bug no projeto, é bem mais fácil de encontrar em qual commit ele foi inserido e reverter o que foi feito.
+
+2) Padronização dos commits
+   
+Outra prática muito importante e que está ligada a anterior é a padronização das mensagens dos commits, dessa maneira seguimos uma estrutura na hora de escrevermos as mensagens, o que deixa os commits estruturados e padronizados.
+
+#### Exemplos para feat (novas funcionalidades ou adições):
+
+Adicionando uma nova funcionalidade a um script Python:
+feat(script): adicionar capacidade de processamento de dados em batch no process_data.py
+feat(api): implementar nova rota de autenticação no server.py
+Adicionando novos componentes em um projeto frontend:
+feat(frontend): adicionar novo componente de slider na homepage
+feat(ui): introduzir botão de compartilhamento social no post_view.jsx
+Incluindo scripts de automação ou utilitários:
+feat(utils): adicionar script para limpeza automática de logs
+feat(automation): criar ferramenta de deployment automatizado
+Expandindo funcionalidades de um aplicativo móvel:
+feat(mobile): implementar notificações push para iOS
+feat(app): adicionar suporte para tema escuro
+
+#### Exemplos para fix (correções de bugs ou problemas):
+Corrigindo um bug em um script Python:
+fix(parser): corrigir erro de parsing de datas no import_data.py
+fix(api): resolver falha na autenticação em casos específicos no auth.py
+Resolvendo problemas de interface de usuário:
+fix(frontend): ajustar layout quebrado em telas pequenas na homepage.css
+fix(ui): corrigir cor de texto ilegível no modo escuro em settings.css
+Correções em scripts de automação ou utilitários:
+fix(build): resolver dependência faltante no script de build
+fix(deploy): corrigir caminho de acesso no script de deployment
+Correções de bugs em aplicativos móveis:
+fix(mobile): corrigir crash ao abrir notificações no Android
+fix(app): resolver problema de sincronização de dados em background
+
+Lembrando que é importante que a mensagem do commit seja clara e descreva especificamente o que foi alterado e por que a alteração foi necessária. Isso ajuda outros colaboradores do projeto a entender o contexto e o propósito das mudanças feitas.
+
+#### Mudanças no .gitignore
+Quando você está adicionando algo ao .gitignore:
+chore(gitignore): adicionar arquivos de log
+chore(gitignore): ignorar arquivos de ambiente virtual
+Quando você está removendo algo do .gitignore:
+chore(gitignore): remover entradas obsoletas
+chore(gitignore): permitir arquivos de configuração de IDE
+
+#### Mudanças no pyproject.toml
+Para atualizações de dependências:
+build(deps): atualizar dependências
+fix(deps): corrigir versões de dependências para compatibilidade
+Para adicionar novas dependências:
+feat(deps): adicionar biblioteca requests
+feat(deps): incluir pytest para testes
+Para mudanças na configuração do projeto:
+build(pyproject): configurar ferramentas de linting
+build(pyproject): ajustar configurações de empacotamento
+
+
+#### Explicando os Prefixos:
+feat: Uma nova funcionalidade para o usuário, não uma nova funcionalidade para scripts de build.
+fix: Correção de bug para o usuário, não uma correção para scripts de build.
+build: Mudanças que afetam o sistema de build ou dependências externas (exemplo: scopes: gulp, broccoli, npm).
+chore: Atualizações no processo de build, alterações em ferramentas auxiliares e bibliotecas como documentação gerada.
+Esses prefixos ajudam a categorizar o tipo de mudança que está sendo feita, tornando mais fácil para outros desenvolvedores entenderem rapidamente o impacto de cada commit no projeto.
 
 ## Mkdocs
 
