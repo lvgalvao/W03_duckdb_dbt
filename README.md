@@ -11,7 +11,7 @@ Este repositório contém a segunda parte do projeto Workshop03, que demonstra o
 
 Precisamos responder:
 
-- Qual a loja com a maior e menor margem?
+- Qual a loja com receita venda?
 - Quais sas 5 lojas com mais e com menos venda?
 - Quais 10 produtos tiveram a maior receita?
 
