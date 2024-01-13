@@ -33,19 +33,6 @@ O dbt suporta integração e entrega contínuas, juntamente com testes automatiz
 
 A documentação é gerada automaticamente, proporcionando uma visão clara da linhagem dos dados e facilitando a rastreabilidade e a compreensão das transformações.
 
-## Estrutura de um Projeto dbt
-
-### Arquivos Principais
-
-* `dbt_project.yml`: Define as configurações do projeto dbt.
-* `profiles.yml`: Contém credenciais e perfis para conexões com Data Warehouses.
-
-### Componentes de um Projeto
-
-* **Projeto**: Um diretório contendo arquivos `.sql` e `.yml`.
-* **Modelo**: Arquivos `.sql` com instruções `SELECT`, formando a base das transformações.
-* **Comandos**: Instruções `dbt` para executar tarefas específicas.
-
 ## Como é a configuração padrão do dbt-core
 
 ![Texto alternativo](pic/pic08.png)
@@ -73,4 +60,38 @@ A conexão com o duckdb é igual a qualquer outro conector
 
 ```bash
 poetry add dbt-duckdb
+```
+
+### Arquivos Principais
+
+* `dbt_project.yml`: Define as configurações do projeto dbt.
+* `profiles.yml`: Contém credenciais e perfis para conexões com Data Warehouses.
+
+```yml
+dbt_project_03:
+  outputs:
+    dev:
+      type: duckdb
+      path: /tmp/dbt.duckdb
+      extensions:
+        - httpfs
+        - parquet
+      settings:
+        s3_region: us-east-1
+        s3_access_key_id: "{{ env_var('S3_ACCESS_KEY_ID') }}"
+        s3_secret_access_key: "{{ env_var('S3_SECRET_ACCESS_KEY') }}"
+  target: dev
+  ```
+
+* `sources.yml`: Define os path das fontes
+
+```yml
+version: 2
+
+sources:
+  - name: external_source
+    meta:
+     external_location: 's3://workshop03-salesrecord/vendas/*.parquet'
+    tables:
+     - name: transactions
 ```
