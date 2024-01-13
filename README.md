@@ -60,10 +60,19 @@ pyenv local 3.11.5
 Instale as dependências do projeto usando Poetry:
 
 ```bash
+poetry shell
+poetry env use 3.11.5
 poetry install
 ```
 
 Isso instalará todas as dependências listadas no arquivo `pyproject.toml`.
+
+Teste executando o comando
+
+```
+bash
+duckdb
+```
 
 ## Documentação
 
