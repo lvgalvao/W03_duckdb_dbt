@@ -68,3 +68,9 @@ Como o duckdb roda local, conseguimos remover a figura do DW para aproveitar nos
 A conexão com o duckdb é igual a qualquer outro conector
 
 [Lista de conectores dbt](https://docs.getdbt.com/docs/connect-adapters)
+
+## Instalação
+
+```bash
+poetry add dbt-duckdb
+```
