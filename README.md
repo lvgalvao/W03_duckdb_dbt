@@ -1,5 +1,8 @@
 ## Workshop03: DuckDB e DBT
 
+![Texto alternativo](capa.png)
+
+
 ### Onde estamos?
 Conseguimos ter os nossos dados da API, banco SQL e EXCEL em nosso Data Lake. Mas como transformar esses dados em valor para o negócio?
 
