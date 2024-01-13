@@ -9,6 +9,7 @@ packages = [{include = "workshop03_duckdb_dbt"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 pre-commit = "^3.6.0"
+duckdb = "^0.9.2"
 
 
 [build-system]
