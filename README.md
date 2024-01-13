@@ -21,11 +21,10 @@ Mkdocs: [Github-Pages](https://lvgalvao.github.io/Workshop03_duckdb_dbt/)
 
 Antes de começar, certifique-se de ter os seguintes pré-requisitos instalados em seu sistema:
 
-Git
-Python (recomendado: usar pyenv para gerenciamento de versões)
-Poetry para gerenciamento de dependências Python
+- Git
+- Python (recomendado 3.11.5: usar pyenv para gerenciamento de versões)
+- Poetry para gerenciamento de dependências Python
 
-Usamos o [DataProjectStarterKit](https://github.com/lvgalvao/DataProjectStarterKit) como base de projeto
 
 ### Como instalar?
 
@@ -49,8 +48,8 @@ cd Workshop03_duckdb_dbt
 Se estiver usando `pyenv`, configure a versão local do Python para o projeto:
 
 ```bash
-pyenv install 3.8.5  # Substitua com a versão específica necessária para o projeto
-pyenv local 3.8.5
+pyenv install 3.11.5  # Substitua com a versão específica necessária para o projeto
+pyenv local 3.11.5
 ```
 
 ### Instalando Dependências
