@@ -67,7 +67,28 @@
             
             <li class="nav-item" data-level="1"><a href="#welcome-to-mkdocs" class="nav-link">Welcome to MkDocs</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#commands" class="nav-link">Commands</a>
+            <li class="nav-item" data-level="2"><a href="#git-e-github" class="nav-link">Git e Github</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#pyenv" class="nav-link">Pyenv</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#poetry-tipo-pip" class="nav-link">Poetry (tipo PIP)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#arquivo-gitignore-e-versionando-o-que-temos-ate-aqui" class="nav-link">Arquivo .gitignore e versionando o que temos até aqui</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#aquecimento" class="nav-link">Aquecimento</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#pre-commit" class="nav-link">Pre-commit</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -87,15 +108,93 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
+<h2 id="git-e-github">Git e Github</h2>
+<p>Git e Github são ferramentas de versionamento de código. <a href="https://www.youtube.com/watch?v=6Czd1Yetaac">Assista e esse vídeo</a> e <a href="https://cli.github.com/manual/gh_repo_create">leia isso aqui</a> para entendermais sobre github e como instalar a CLI do Github.</p>
+<p>Dessa forma conseguimos configurar nosso projeto com o comando </p>
+<pre><code class="language-bash">gh repo create
+</code></pre>
+<h2 id="pyenv">Pyenv</h2>
+<p>O Pyenv é uma ferramenta poderosa para gerenciar múltiplas versões do Python. Com ela, é possível instalar várias versões do Python e alternar entre elas de maneira flexível e eficiente. Isso é especialmente útil em projetos que exigem versões específicas do Python, garantindo compatibilidade e evitando conflitos. A instalação e o uso do Pyenv são simples, tornando a gestão de versões do Python uma tarefa descomplicada para desenvolvedores de todos os níveis.</p>
+<p>Os principais comandos são:</p>
+<pre><code class="language-bash">pyenv versions
+pyenv local 3.11.5
+pyenv global 3.11.5
+</code></pre>
+<h2 id="poetry-tipo-pip">Poetry (tipo PIP)</h2>
+<p>Poetry simplifica o gerenciamento de dependências e pacotes no Python, substituindo o PIP.
+Os principais comandos são:</p>
+<p>Inicia um novo projeto interativamente</p>
+<pre><code class="language-bash">poetry init
+</code></pre>
+<p>Inicia um novo projeto interativamente</p>
+<pre><code class="language-bash">poetry add [pacote]
+</code></pre>
+<p>Remove uma dependência do projeto.</p>
+<pre><code class="language-bash">poetry remove [pacote]
+</code></pre>
+<p>Ativa o ambiente virtual do projeto.</p>
+<pre><code class="language-bash">poetry shell
+</code></pre>
+<h2 id="arquivo-gitignore-e-versionando-o-que-temos-ate-aqui">Arquivo .gitignore e versionando o que temos até aqui</h2>
+<h1 id="aquecimento">Aquecimento</h1>
+<p>Crie um arquivo</p>
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site</li>
-<li>.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
+<li>Git add</li>
+<li>Git commit</li>
+<li>Git push</li>
+<li>Git pull</li>
 </ul>
+<p>Seu chefe mandou deletar</p>
+<ul>
+<li>Git rm</li>
+</ul>
+<p>Seu chefe mandou voltar</p>
+<ul>
+<li>Git log</li>
+<li>Git revert</li>
+</ul>
+<p>Adicionar arquivo CSV</p>
+<ul>
+<li>Git add</li>
+<li>Git commit</li>
+</ul>
+<p>E agora?</p>
+<p>Mudar o nome disso tudo</p>
+<ul>
+<li>Git reset -hard</li>
+<li>Git rebase -i --root</li>
+<li>Git commit –amend</li>
+<li>Git rebase –continue</li>
+</ul>
+<h2 id="pre-commit">Pre-commit</h2>
+<ul>
+<li>check-yaml</li>
+<li>black (formatador) Nomes bonito-s</li>
+<li>check-added-large-files</li>
+<li>commitizen</li>
+</ul>
+<pre><code class="language-yaml"># .pre-commit-config.yaml
+
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+   rev: v4.5.0
+   hooks:
+   -   id: check-yaml
+-   repo: https://github.com/psf/black
+   rev: 23.12.1
+   hooks:
+   -   id: black
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+   rev: v4.5.0  # Use a versão mais recente
+   hooks:
+   -   id: check-added-large-files
+       args: ['--maxkb=500']  # Define o tamanho máximo permitido 
+-   repo: https://github.com/commitizen-tools/commitizen
+   rev: v3.13.0
+   hooks:
+     - id: commitizen
+       stages: [commit-msg]
+</code></pre>
 <h2 id="mkdocs">Mkdocs</h2>
 <h3 id="1-instalacao-do-mkdocs">1. Instalação do MkDocs</h3>
 <p>Primeiro, você precisa instalar o MkDocs. Como seu projeto usa Poetry para gerenciamento de dependências, você pode adicionar o MkDocs como uma dependência de desenvolvimento:</p>
@@ -226,5 +325,5 @@ docs/
 
 <!--
 MkDocs version : 1.5.3
-Build Date UTC : 2024-01-13 07:13:55.779600+00:00
+Build Date UTC : 2024-01-13 07:28:04.914857+00:00
 -->
