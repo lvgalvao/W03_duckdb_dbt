@@ -1,17 +1,62 @@
-# Welcome to MkDocs
+# duckdb
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Em nossa rotina temos que trabalhar muitas vezes consumindo; arquivos csv, parquet e outros formatos, e muitas vezes essa atividade não é tão simples, estão muitas vezes na AWS, Azure, etc. 
 
-## Commands
+O duckdb hoje é a forma mais eficiente para se trabalhar com:
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+- Múltiplos arquivos
+- Quem é muito bom em SQL (compatibilidade de código)
+- Quem gosta de Python, R ou Java
+- Quem usa Pandas ou Polars
+- Quem precisa de performance
+- Quem quer aproveitar hardware local
+- Utilizar um In process OLAP DBMS, Columnar database e com processamento vetorial 
+  
+![Texto alternativo](pic/pic01.png)
 
-## Project layout
+**É o SQLite do Analytics**
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+[Como instalar o duckdb?](https://duckdb.org/docs/archive/0.9.1/installation/index?undefined=macos)
+
+```bash
+poetry add duckdb
+```
+
+![Texto alternativo](pic/pic02.png)
+
+
+## Como utilizá-lo com o vscode?
+
+Acessar o `Open Keyboard Shortcuts (JSON)`
+
+![Texto alternativo](pic/pic03.png)
+
+Incluir esse atalha, dessa forma sempre que selecionarmos determinado texto e apertarmos `shift+enter ` ele irá rodar esse código no terminal
+
+![Texto alternativo](pic/pic04.png)
+
+Vamos brincar um pouco
+
+![Texto alternativo](pic/pic05.png)
+
+- Fazer o Exercício 01
+
+Vamos criar nossa primeira tabela /o/
+Por ele rodar in-processo, ao sairmos do programa perdemos os dados
+
+Exemplo: Persistindo os dados ao iniciar o CLI
+
+![Texto alternativo](pic/pic06.png)
+
+Alguns pontos importantes sobre o formato duckdb
+
+- 1 arquivo único (todas as tabelas ficam no mesmo arquivo)
+  
+- Suporta update
+- Armazenada no formato colunar
+
+
+
+
+
+
